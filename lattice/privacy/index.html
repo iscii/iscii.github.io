@@ -9,18 +9,29 @@
 <body>
   <main>
     <h1>Lattice privacy policy</h1>
-    <p>Last updated 19 October 2026.</p>
+    <p>Last updated 8 November 2026.</p>
 
-    <p class="lede">Lattice keeps your data on your iPhone. It has no accounts, no servers, no analytics and no ads, and it does not sell or share your data.</p>
+    <p class="lede">Lattice keeps your data on your iPhone. If sync is set up, it also keeps a copy on a private server run by the developer. Lattice has no accounts and no ads, and it does not sell your data.</p>
 
     <h2>What Lattice stores</h2>
-    <p>Your tasks, projects, habits, journal entries and voice recordings are saved in a database on your iPhone, inside the app. Lattice also keeps a local log of which features are used (for example, "a task was moved"), which never contains your text and never leaves the device. Deleting the app deletes all of this.</p>
+    <p>Your tasks, projects, habits, journal entries and voice recordings are saved in a database on your iPhone, inside the app. Lattice also keeps a local log of which features are used (for example, "a task was moved"), which never contains your text and is not synced. Deleting the app deletes what is on your iPhone; it does not delete a copy already synced to the server (see below).</p>
 
     <h2>Apple Calendar</h2>
-    <p>If you allow calendar access, Lattice reads and writes events through iOS. Your events stay in Apple Calendar; Lattice shows them but does not copy them into its own database.</p>
+    <p>If you allow calendar access, Lattice reads and writes events through iOS. Your events stay in Apple Calendar; Lattice shows them but does not copy them into its own database, apart from the linked events described under Sync.</p>
 
     <h2>Microphone</h2>
-    <p>If you record a voice clip in the journal, Lattice uses the microphone only while you record. Recordings are saved on your iPhone.</p>
+    <p>If you record a voice clip in the journal, Lattice uses the microphone only while you record. Recordings are saved on your iPhone and, if sync is set up, copied to the server.</p>
+
+    <h2>Sync and the Lattice server</h2>
+    <p>Sync sends your data to a server run by the developer, so it can be kept safe and read from other tools. In this version sync is set up only on the developer's own device; on any other install it sends nothing.</p>
+    <p><strong>What is sent:</strong> your tasks, projects, habits, goals, templates, check-ins, workouts, journal entries, voice recordings and their transcripts, and your Lattice settings. Health data from Oura and your local usage log are not sent.</p>
+    <p><strong>Linked calendar events:</strong> calendar events are not synced, with one exception. If you link an event to a workout, habit, task, goal or project, that link (the event's identifier, its calendar and its title) is synced, and so is any workout logged from it, which carries the event's title and times.</p>
+    <p><strong>How it is protected:</strong> data travels over an encrypted connection on a private network. On the server it is stored on an encrypted disk, access needs a per-device token, and backups are encrypted before they are copied to the developer's own storage.</p>
+    <p><strong>Who can read it:</strong> the developer. The developer can also connect the server, read-only, to an AI assistant (Claude, by Anthropic) so it can read the synced data when asked. Text the assistant reads is sent to Anthropic to answer the request.</p>
+    <p><strong>Turning it off:</strong> Settings &gt; Data &gt; Sync &gt; Turn off stops anything further being sent. It does not delete the copy on the server; to have that deleted, use the contact below.</p>
+
+    <h2>Diagnostics</h2>
+    <p>Builds set up for testing send diagnostic events to the developer's server over the same private network: which screens and actions were used, ids, states, counts, screen positions, and error messages. They are designed never to include titles, notes or journal text. They are used only to find and fix bugs.</p>
 
     <h2>Google Calendar</h2>
     <p>Google Calendar is off until you turn it on in Settings and sign in with Google. Lattice then asks for:</p>
@@ -30,8 +41,8 @@
     </ul>
     <p>How this data is handled:</p>
     <ul>
-      <li>Requests go directly from your iPhone to Google. Lattice has no server, so your Google data is never sent to the developer or anyone else.</li>
-      <li>Events are held in the app's memory while you view them. They are not saved in Lattice's database, and they are not used for anything except showing and editing your calendar in the app.</li>
+      <li>Requests go directly from your iPhone to Google. Your Google data is not sent to the developer or anyone else, except for events you choose to link, as described under Sync.</li>
+      <li>Events are kept on your iPhone only as a short-lived copy, about a week ahead, so the calendar and its widget can show them. They are not used for anything except showing and editing your calendar in the app.</li>
       <li>Your Google sign-in is kept in the iOS Keychain by Google's sign-in library.</li>
       <li>Lattice does not use Google data for advertising, does not sell it, does not transfer it to anyone, and does not use it to train AI or machine-learning models.</li>
       <li>You can disconnect at any time: Settings &gt; Google Calendar &gt; Sign out. You can also remove Lattice's access from your Google Account at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
@@ -42,7 +53,7 @@
     <p>Lattice checks for app updates from Expo's update service, which receives standard technical information (such as the app version and platform) to deliver them. It receives none of your content.</p>
 
     <h2>Changes</h2>
-    <p>If Lattice ever adds a feature that sends your data off your iPhone, such as syncing between devices, this policy will be updated before that feature ships, and the feature will say what it sends.</p>
+    <p>If Lattice adds another feature that sends your data off your iPhone, or changes what sync sends, this policy will be updated before that change ships.</p>
 
     <h2>Contact</h2>
     <p>Questions about this policy: <a href="https://github.com/iscii/iscii.github.io/issues">open an issue</a>.</p>
