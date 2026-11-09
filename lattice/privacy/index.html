@@ -26,8 +26,8 @@
     <p>Sync sends your data to a server run by the developer, so it can be kept safe and read from other tools. In this version sync is set up only on the developer's own device; on any other install it sends nothing.</p>
     <p><strong>What is sent:</strong> your tasks, projects, habits, goals, templates, check-ins, workouts, journal entries, voice recordings and their transcripts, calendar events (see below), and your Lattice settings. Health data from Oura and your local usage log are not sent.</p>
     <p><strong>Calendar events:</strong> events from the calendars you have turned on in Lattice, from 30 days ago to 90 days ahead, are saved in Lattice's database and synced. Each saved event holds its source (Apple or Google), its calendar's id and name, an identifier, its title, notes, location, start and end times, whether it is all-day, its repeat details and when it was last seen. An event that is deleted, moves out of that window, or belongs to a calendar you turn off or disconnect is marked as removed; older copies stay stored until they are purged. There is currently no setting to turn off event storage other than turning off sync, which stops events being sent.</p>
-    <p><strong>How it is protected:</strong> data travels over an encrypted connection on a private network. On the server it is stored on an encrypted disk, access needs a per-device token, and backups are encrypted before they are copied to the developer's own storage.</p>
-    <p><strong>Who can read it:</strong> the developer. The developer can also connect the server, read-only, to an AI assistant (Claude, by Anthropic) so it can read the synced data when asked. Text the assistant reads is sent to Anthropic to answer the request.</p>
+    <p><strong>How it is protected:</strong> sync travels over an encrypted connection on a private network. On the server it is stored on an encrypted disk, access needs a per-device token, and backups are encrypted before they are copied to the developer's own storage.</p>
+    <p><strong>Who can read it:</strong> the developer. The developer can also connect the server, read-only, to an AI assistant (Claude, by Anthropic) so it can read the synced data when asked. That connection needs a sign-in and is read-only. It reaches the server through Cloudflare, whose network decrypts the traffic in transit to route and protect it, so what the assistant reads passes through Cloudflare, and is then sent to Anthropic to answer the request.</p>
     <p><strong>Turning it off:</strong> Settings &gt; Data &gt; Sync &gt; Turn off stops anything further being sent. It does not delete the copy on the server; to have that deleted, use the contact below.</p>
 
     <h2>Diagnostics</h2>
@@ -42,7 +42,7 @@
     <p>How this data is handled:</p>
     <ul>
       <li>Requests go directly from your iPhone to Google. With sync off, which is every install other than the developer's own, your Google data is not sent to the developer or anyone else.</li>
-      <li>With sync on, events from the Google calendars you have turned on are stored on the server as described under Sync, and can be read by the AI assistant described there.</li>
+      <li>With sync on, events from the Google calendars you have turned on are stored on the server as described under Sync, and can be read by the AI assistant described there, through Cloudflare.</li>
       <li>Events are saved on your iPhone, from 30 days ago to 90 days ahead, so the calendar, its widget and sync can use them.</li>
       <li>Your Google sign-in is kept in the iOS Keychain by Google's sign-in library.</li>
       <li>Lattice does not use Google data for advertising, does not sell it, and does not use it to train AI or machine-learning models. It does not transfer it to anyone, except as described under Sync on the developer's own device.</li>
