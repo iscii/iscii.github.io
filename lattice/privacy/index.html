@@ -9,7 +9,7 @@
 <body>
   <main>
     <h1>Lattice privacy policy</h1>
-    <p>Last updated 9 November 2026.</p>
+    <p>Last updated 10 November 2026.</p>
 
     <p class="lede">Lattice keeps your data on your iPhone. If sync is set up, it also keeps a copy on a private server run by the developer. Lattice has no accounts and no ads, and it does not sell your data.</p>
 
@@ -23,12 +23,12 @@
     <p>If you record a voice clip in the journal, Lattice uses the microphone only while you record. Recordings are saved on your iPhone and, if sync is set up, copied to the server.</p>
 
     <h2>Sync and the Lattice server</h2>
-    <p>Sync sends your data to a server run by the developer, so it can be kept safe and read from other tools. In this version sync is set up only on the developer's own device; on any other install it sends nothing.</p>
+    <p>Sync keeps a copy of your data on a server run by the developer, so it can be kept safe and used from other tools. It works both ways: changes made on the server, such as by the assistant described below, come back to your iPhone. In this version sync is set up only on the developer's own device; on any other install it sends nothing.</p>
     <p><strong>What is sent:</strong> your tasks, projects, habits, goals, templates, check-ins, workouts, journal entries, voice recordings and their transcripts, calendar events (see below), and your Lattice settings. Health data from Oura and your local usage log are not sent.</p>
     <p><strong>Calendar events:</strong> events from the calendars you have turned on in Lattice, from 30 days ago to 90 days ahead, are saved in Lattice's database and synced. Each saved event holds its source (Apple or Google), its calendar's id and name, an identifier, its title, notes, location, start and end times, whether it is all-day, its repeat details and when it was last seen. An event that is deleted, moves out of that window, or belongs to a calendar you turn off or disconnect is marked as removed; older copies stay stored until they are purged. There is currently no setting to turn off event storage other than turning off sync, which stops events being sent.</p>
     <p><strong>How it is protected:</strong> sync travels over an encrypted connection on a private network. On the server it is stored on an encrypted disk, access needs a per-device token, and backups are encrypted before they are copied to the developer's own storage.</p>
-    <p><strong>Who can read it:</strong> the developer. The developer can also connect the server, read-only, to an AI assistant (Claude, by Anthropic) so it can read the synced data when asked. That connection needs a sign-in and is read-only. It reaches the server through Cloudflare, whose network decrypts the traffic in transit to route and protect it, so what the assistant reads passes through Cloudflare, and is then sent to Anthropic to answer the request.</p>
-    <p><strong>Turning it off:</strong> Settings &gt; Data &gt; Sync &gt; Turn off stops anything further being sent. It does not delete the copy on the server; to have that deleted, use the contact below.</p>
+    <p><strong>Who can read and change it:</strong> the developer. The developer can also connect the server to an AI assistant (Claude, by Anthropic) so it can read the synced data when asked and, where the developer has allowed it, add or change tasks, habit logs and check-ins, which then sync back to the iPhone. It cannot edit journal entries or notes. That connection needs a sign-in and is read-only. It reaches the server through Cloudflare, whose network decrypts the traffic in transit to route and protect it, so what the assistant reads passes through Cloudflare, and is then sent to Anthropic to answer the request.</p>
+    <p><strong>Turning it off:</strong> Settings &gt; Data &gt; Sync &gt; Turn off stops anything further being sent or received. It does not delete the copy on the server; to have that deleted, use the contact below.</p>
 
     <h2>Diagnostics</h2>
     <p>Builds set up for testing send diagnostic events to the developer's server over the same private network: which screens and actions were used, ids, states, counts, screen positions, and error messages. They are designed never to include titles, notes or journal text. They are used only to find and fix bugs.</p>
